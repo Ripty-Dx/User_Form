@@ -1,23 +1,53 @@
-{
-  "users": [
-    {
-        "id": 1,
-        "name": "Ripty Dx",
-        "email": "test@b2b.com",
-        "mobile": "1",
-        "address": "Zirakpur, punjab",
-        "gender": "Female",
-        "hobbies": ["Blogging", "Yoga"],
-        "preferences": "Critical Thinking"
-      },{
-        "id": 2,
-        "name": "Ripty Dx",
-        "email": "test@b2b.com",
-        "mobile": "1",
-        "address": "Zirakpur, punjab",
-        "gender": "Female",
-        "hobbies": ["Blogging", "Yoga"],
-        "preferences": "Critical Thinking"
-      }
-  ]
-}
+[
+  {
+    "name": "Ripty Dx",
+    "email": "test@b2b.com",
+    "mobile": "1",
+    "address": "Zirakpur, punjab",
+    "gender": "Female",
+    "hobbies": [
+      "Blogging",
+      "Yoga"
+    ],
+    "preferences": "Critical Thinking",
+    "id": 1
+  },
+  {
+    "name": "Ripty Dx",
+    "email": "test@b2b.com",
+    "mobile": "1",
+    "address": "Zirakpur, punjab",
+    "gender": "Female",
+    "hobbies": [
+      "Blogging",
+      "Yoga"
+    ],
+    "preferences": "Critical Thinking",
+    "id": 2
+  },
+  {
+    "name": "Ripty Dx",
+    "email": "getinfo@designersx.com",
+    "mobile": "45378",
+    "address": "Zirakpur, punjab, India",
+    "gender": "Female",
+    "hobbies": [
+      "Photography",
+      "Blogging",
+      "Yoga",
+      "Art"
+    ],
+    "preferences": "Critical Thinking",
+    "id": 3
+  },
+  {
+    "name": "wdq",
+    "email": "wq@gm.cm",
+    "mobile": "21",
+    "address": "21",
+    "gender": "Female",
+    "hobbies": "Photography",
+    "preferences": "Creativity",
+    "id": 4
+  }
+]

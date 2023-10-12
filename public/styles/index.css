@@ -20,3 +20,8 @@ th,td{
     text-align: center;
     vertical-align: middle;
 }
+.back{
+    position: absolute;
+    top: 3%;
+    left: 1%;
+}

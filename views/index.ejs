@@ -18,7 +18,7 @@
       <div class="w-100 shadow-sm bg-white border rounded-3 p-4">
         <div class="d-flex justify-content-between px-1 align-items-center mb-4">
           <h3><span class="underline">All</span> Users</h3>
-          <button class="btn btn-primary bg-blue">Add New User</button>
+          <button class="btn btn-primary bg-blue" onclick="window.location.href='/addNew'">Add New User</button>
         </div>
         <table class="table table-responsive table-striped border">
           <thead>
@@ -35,27 +35,22 @@
             </tr>
           </thead>
           <tbody>
-            <% if (locals.content) { %> <% console.log(content); %>
-               
-                <% for( let index = 0; index < content.length; index++ ) { %>
-                    <tr>
-                        <td><%= content[index].id %></td>
-                        <td><%= content[index].name %></td>
-                        <td><%= content[index].email %></td>
-                        <td><%= content[index].mobile %></td>
-                        <td><%= content[index].address %></td>
-                        <td><%= content[index].gender %></td>
-                        <td><%= content[index].hobbies %></td>
-                        <td><%= content[index].preferences %></td>
-                        <td>
-                          <button class="btn btn-success">Edit</button>
-                          <button class="btn btn-danger">Delete</button>
-                        </td>
-                      </tr>
-                <% } %>
-            
-
-            <% } %>
+            <% if (locals.content) { %> <% for( let index = 0; index < content.length; index++ ) { %>
+            <tr>
+              <td><%= content[index].id %></td>
+              <td><%= content[index].name %></td>
+              <td><%= content[index].email %></td>
+              <td><%= content[index].mobile %></td>
+              <td><%= content[index].address %></td>
+              <td><%= content[index].gender %></td>
+              <td><%= content[index].hobbies %></td>
+              <td><%= content[index].preferences %></td>
+              <td>
+                <button class="btn btn-success">Edit</button>
+                <button class="btn btn-danger" onclick="deleteID(content[index].id )">Delete</button>
+              </td>
+            </tr>
+            <% } %> <% } %>
           </tbody>
         </table>
       </div>
