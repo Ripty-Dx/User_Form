@@ -39,15 +39,5 @@
     ],
     "preferences": "Critical Thinking",
     "id": 3
-  },
-  {
-    "name": "wdq",
-    "email": "wq@gm.cm",
-    "mobile": "21",
-    "address": "21",
-    "gender": "Female",
-    "hobbies": "Photography",
-    "preferences": "Creativity",
-    "id": 4
   }
 ]

@@ -46,8 +46,8 @@
               <td><%= content[index].hobbies %></td>
               <td><%= content[index].preferences %></td>
               <td>
-                <button class="btn btn-success">Edit</button>
-                <button class="btn btn-danger" onclick="deleteID(content[index].id )">Delete</button>
+                <button class="btn btn-success" onclick="window.location.href='/edit/<%=content[index].id%>'">Edit</button>
+                <button class="btn btn-danger" onclick="window.location.href='/delete/<%=content[index].id%>'">Delete</button>
               </td>
             </tr>
             <% } %> <% } %>
