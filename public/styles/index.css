@@ -1,0 +1,18 @@
+.underline {
+  text-decoration: underline;
+  text-decoration-color: #4070f4;
+}
+.bg-blue {
+  background-color: #4070f4;
+}
+.heading {
+  font-size: 70px;
+  color: white;
+  text-align: left;
+  font-weight: bolder;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
