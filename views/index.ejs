@@ -15,79 +15,49 @@
 
   <body>
     <div class="bg-blue min-vh-100 min-vw-100 p-4 d-flex">
-      <div class="col-6 d-flex justify-content-center align-items-center flex-column">
-        <div>
-          <h1 class="heading">Registration</h1>
-          <h1 class="heading">Form</h1>
+      <div class="w-100 shadow-sm bg-white border rounded-3 p-4">
+        <div class="d-flex justify-content-between px-1 align-items-center mb-4">
+          <h3><span class="underline">All</span> Users</h3>
+          <button class="btn btn-primary bg-blue">Add New User</button>
         </div>
-      </div>
-      <div class="w-50 mx-auto my-auto shadow-sm bg-white border rounded-3 p-4">
-        <h3 class="mb-4"><span class="underline">Re</span>gistration</h3>
-        <form action="/submit" method="post">
-          <!-- NAME -->
-          <div class="mb-3 d-flex justify-content-center align-items-center w-100">
-            <input type="text" class="form-control shadow-sm" name="name" placeholder="Enter your name" required/>
-          </div>
-          <!-- EMAIL -->
-          <div class="mb-3 d-flex justify-content-center align-items-center w-100">
-            <input type="email" class="form-control shadow-sm" name="email" placeholder="Enter your email" required/>
-          </div>
-          <!-- MOBILE -->
-          <div class="mb-3 d-flex justify-content-center align-items-center w-100">
-            <input type="number" class="form-control shadow-sm" name="mobile" placeholder="Enter your mobile" required/>
-          </div>
-          <!-- ADDRESS -->
-          <div class="mb-3 d-flex justify-content-center align-items-center w-100">
-            <input type="text" class="form-control shadow-sm" name="address" placeholder="Enter your address" />
-          </div>
-          <!-- GENDER -->
-          <div class="mb-3 d-flex justify-content-start ps-1 align-items-center w-100">
-            <label class="form-label me-5"> Gender </label>
-            <div class="form-check">
-              <input type="radio" class="form-check-input" name="gender" required value="Male" id="Male" />
-              <label class="form-check-label me-5" for="Male">Male</label>
-            </div>
-            <div class="form-check">
-              <input type="radio" class="form-check-input" name="gender" required value="Female" id="Female" />
-              <label class="form-check-label me-5" for="Female">Female</label>
-            </div>
-            <div class="form-check">
-              <input type="radio" class="form-check-input" name="gender" required value="Others" id="Others" />
-              <label class="form-check-label me-5" for="Others">Others</label>
-            </div>
-          </div>
-          <!-- HOBBIES -->
-          <div class="mb-3 d-flex justify-content-start ps-1 align-items-center w-100">
-            <label class="form-label me-5"> Hobbies </label>
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" value="Photography" id="Photography" />
-              <label class="form-check-label me-5" for="Photography">Photography</label>
-            </div>
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" value="Blogging" id="Blogging" />
-              <label class="form-check-label me-5" for="Blogging">Blogging</label>
-            </div>
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" value="Yoga" id="Yoga" />
-              <label class="form-check-label me-5" for="Yoga">Yoga</label>
-            </div>
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" value="Art" id="Art" />
-              <label class="form-check-label me-5" for="Art">Art</label>
-            </div>
-          </div>
-          <!-- PREFERENCES -->
-          <div class="mb-3 d-flex justify-content-start ps-1 align-items-center w-100">
-            <label class="form-label me-5"> Preferences </label>
-            <select class="form-select">
-              <option selected disabled>Top Soft Skills</option>
-              <option value="Problem Solving">Problem Solving</option>
-              <option value="Critical Thinking">Critical Thinking</option>
-              <option value="Creativity">Creativity</option>
-            </select>
-          </div>
-          <button class="btn bg-blue btn-primary w-100">Submit</button>
-        </form>
+        <table class="table table-responsive table-striped border">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Mobile</th>
+              <th>Address</th>
+              <th>Gender</th>
+              <th>Hobbies</th>
+              <th>Preferences</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if (locals.content) { %> <% console.log(content); %>
+               
+                <% for( let index = 0; index < content.length; index++ ) { %>
+                    <tr>
+                        <td><%= content[index].id %></td>
+                        <td><%= content[index].name %></td>
+                        <td><%= content[index].email %></td>
+                        <td><%= content[index].mobile %></td>
+                        <td><%= content[index].address %></td>
+                        <td><%= content[index].gender %></td>
+                        <td><%= content[index].hobbies %></td>
+                        <td><%= content[index].preferences %></td>
+                        <td>
+                          <button class="btn btn-success">Edit</button>
+                          <button class="btn btn-danger">Delete</button>
+                        </td>
+                      </tr>
+                <% } %>
+            
+
+            <% } %>
+          </tbody>
+        </table>
       </div>
     </div>
     <script

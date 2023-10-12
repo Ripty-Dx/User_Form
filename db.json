@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+        "id": 1,
+        "name": "Ripty Dx",
+        "email": "test@b2b.com",
+        "mobile": "1",
+        "address": "Zirakpur, punjab",
+        "gender": "Female",
+        "hobbies": ["Blogging", "Yoga"],
+        "preferences": "Critical Thinking"
+      },{
+        "id": 2,
+        "name": "Ripty Dx",
+        "email": "test@b2b.com",
+        "mobile": "1",
+        "address": "Zirakpur, punjab",
+        "gender": "Female",
+        "hobbies": ["Blogging", "Yoga"],
+        "preferences": "Critical Thinking"
+      }
+  ]
+}
