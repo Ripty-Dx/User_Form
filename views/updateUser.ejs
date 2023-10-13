@@ -31,39 +31,38 @@
         </div>
       </div>
       <!-- right part -->
-      <% console.log(locals.content,locals.content.id); %>
       <div class="w-50 mx-auto my-auto shadow-sm bg-white border rounded-3 p-4">
         <h3 class="mb-4"><span class="underline">Re</span>gistration</h3>
-        <form action="/create" method="post">
+        <form action="/updated/<%= content.id %>" method="post">
           <!-- NAME -->
           <div class="mb-3 d-flex justify-content-center align-items-center w-100">
-            <input type="text" class="form-control shadow-sm" name="name" placeholder="Enter your name" required value=<%=content.name%>/>
+            <input type="text" class="form-control shadow-sm" name="name" placeholder="Enter your name" required value="<%=content.name%>" />
           </div>
           <!-- EMAIL -->
           <div class="mb-3 d-flex justify-content-center align-items-center w-100">
-            <input type="email" class="form-control shadow-sm" name="email" placeholder="Enter your email" required value=<%=content.email%>/>
+            <input type="email" class="form-control shadow-sm" name="email" placeholder="Enter your email" required value="<%=content.email%>" />
           </div>
           <!-- MOBILE -->
           <div class="mb-3 d-flex justify-content-center align-items-center w-100">
-            <input type="number" class="form-control shadow-sm" name="mobile" placeholder="Enter your mobile" required value=<%=content.mobile%>/>
+            <input type="number" class="form-control shadow-sm" name="mobile" placeholder="Enter your mobile" required value="<%=content.mobile%>" />
           </div>
           <!-- ADDRESS -->
           <div class="mb-3 d-flex justify-content-center align-items-center w-100">
-            <input type="text" class="form-control shadow-sm" name="address" placeholder="Enter your address" value=<%=content.address%> />
+            <input type="text" class="form-control shadow-sm" name="address" placeholder="Enter your address" value="<%=content.address ?? null%>" />
           </div>
           <!-- GENDER -->
           <div class="mb-3 d-flex justify-content-start ps-1 align-items-center w-100">
             <label class="form-label me-5"> Gender </label>
             <div class="form-check">
-              <input type="radio" class="form-check-input" name="gender" required value="Male" id="Male" />
+              <input type="radio" class="form-check-input" name="gender" required value="Male" id="Male" <%= content.gender=="Male"?"checked":null %>/>
               <label class="form-check-label me-5" for="Male">Male</label>
             </div>
             <div class="form-check">
-              <input type="radio" class="form-check-input" name="gender" required value="Female" id="Female" />
+              <input type="radio" class="form-check-input" name="gender" required value="Female" id="Female" <%= content.gender=="Female"?"checked":null %> />
               <label class="form-check-label me-5" for="Female">Female</label>
             </div>
             <div class="form-check">
-              <input type="radio" class="form-check-input" name="gender" required value="Others" id="Others" />
+              <input type="radio" class="form-check-input" name="gender" required value="Others" id="Others" <%= content.gender=="Others"?"checked":null %> />
               <label class="form-check-label me-5" for="Others">Others</label>
             </div>
           </div>
@@ -71,19 +70,19 @@
           <div class="mb-3 d-flex justify-content-start ps-1 align-items-center w-100">
             <label class="form-label me-5"> Hobbies </label>
             <div class="form-check">
-              <input type="checkbox" class="form-check-input" name="hobbies" value="Photography" id="Photography" />
+              <input type="checkbox" class="form-check-input" name="hobbies" value="Photography" id="Photography" <%= content.hobbies?.includes("Photography")?"checked":null %> />
               <label class="form-check-label me-5" for="Photography">Photography</label>
             </div>
             <div class="form-check">
-              <input type="checkbox" class="form-check-input" name="hobbies" value="Blogging" id="Blogging" />
+              <input type="checkbox" class="form-check-input" name="hobbies" value="Blogging" id="Blogging" <%= content.hobbies?.includes("Blogging")?"checked":null %>/>
               <label class="form-check-label me-5" for="Blogging">Blogging</label>
             </div>
             <div class="form-check">
-              <input type="checkbox" class="form-check-input" name="hobbies" value="Yoga" id="Yoga"/>
+              <input type="checkbox" class="form-check-input" name="hobbies" value="Yoga" id="Yoga" <%= content.hobbies?.includes("Yoga")?"checked":null %> />
               <label class="form-check-label me-5" for="Yoga">Yoga</label>
             </div>
             <div class="form-check">
-              <input type="checkbox" class="form-check-input" name="hobbies" value="Art" id="Art" />
+              <input type="checkbox" class="form-check-input" name="hobbies" value="Art" id="Art" <%= content.hobbies?.includes("Art")?"checked":null %>/>
               <label class="form-check-label me-5" for="Art">Art</label>
             </div>
           </div>
@@ -92,9 +91,9 @@
             <label class="form-label me-5"> Preferences </label>
             <select class="form-select" name="preferences">
               <option selected disabled>Top Soft Skills</option>
-              <option value="Problem Solving">Problem Solving</option>
-              <option value="Critical Thinking">Critical Thinking</option>
-              <option value="Creativity">Creativity</option>
+              <option value="Problem Solving" <%= content.preferences=="Problem Solving" ?"selected":null %> >Problem Solving</option>
+              <option value="Critical Thinking" <%= content.preferences=="Critical Thinking" ?"selected":null %>>Critical Thinking</option>
+              <option value="Creativity" <%= content.preferences=="Creativity" ?"selected":null %>>Creativity</option>
             </select>
           </div>
           <button class="btn bg-blue btn-primary w-100">Submit</button>
