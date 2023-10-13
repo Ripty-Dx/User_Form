@@ -1,0 +1,87 @@
+{
+  "users": [
+    {
+      "name": "Ripty Dx",
+      "email": "test@b2b.com",
+      "mobile": "1",
+      "address": "Zirakpur, punjab",
+      "gender": "Female",
+      "hobbies": [
+        "Blogging",
+        "Yoga"
+      ],
+      "preferences": "Critical Thinking",
+      "id": 1
+    },
+    {
+      "name": "Kunal Gupta",
+      "email": "kunal@gmail.com",
+      "mobile": "69893",
+      "address": "Mohali, India",
+      "gender": "Male",
+      "hobbies": [
+        "Photography",
+        "Blogging"
+      ],
+      "preferences": "Problem Solving",
+      "id": 3
+    },
+    {
+      "name": "Ripty Singla",
+      "email": "te1st@b2b.com",
+      "mobile": "6787",
+      "address": "Mohali, India",
+      "gender": "Female",
+      "hobbies": [
+        "Yoga",
+        "Art"
+      ],
+      "preferences": "Critical Thinking",
+      "id": 4
+    },
+    {
+      "name": "John",
+      "email": "johnsmith@shopify.com",
+      "mobile": "54636",
+      "address": "Mohali, India",
+      "gender": "Male",
+      "hobbies": [
+        "Blogging",
+        "Yoga"
+      ],
+      "preferences": "Creativity",
+      "id": 5
+    },
+    {
+      "name": "Om",
+      "email": "wq@gm.cm",
+      "mobile": "54",
+      "address": "Mohali, India",
+      "gender": "Others",
+      "hobbies": "Yoga",
+      "preferences": "Problem Solving",
+      "id": 7
+    },
+    {
+      "name": "Ripty Singla",
+      "email": "singlaripty30@gmail.com",
+      "mobile": "7674",
+      "address": "Mohali, India",
+      "gender": "Others",
+      "preferences": "Critical Thinking",
+      "id": "8"
+    },
+    {
+      "name": "wdq",
+      "email": "test@b2b.com",
+      "mobile": "324",
+      "address": "",
+      "gender": "Male",
+      "id": 9
+    },
+    {
+      "{\n  \"name\": \"Ripty Dx\",\n  \"email\": \"test@b2b.com\",\n  \"mobile\": \"211\",\n  \"address\": \"\",\n  \"gender\": \"Others\"\n}": "",
+      "id": 10
+    }
+  ]
+}
