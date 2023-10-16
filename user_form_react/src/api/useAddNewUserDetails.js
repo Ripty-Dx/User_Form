@@ -1,14 +1,23 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const useAddNewUserDetails = () => {
+const useAddNewUserDetails = (props) => {
+  // console.log(props);
+  const [data, setData] = useState({});
   useEffect(() => {
-    postDetails();
+    postDetails(props);
   }, []);
-  const name = { name: "Ripty Dx", email: "test@b2b.com", mobile: "211", address: "", gender: "Others" };
-  const postDetails = () => {
-    axios.post("http://localhost:3001/users", JSON.parse(name));
+  const baseURL = "http://localhost:3001/users";
+
+  const postDetails = (props) => {
+    axios
+      .post(baseURL, props)
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((err) => console.log(err));
   };
+  return data;
 };
 
 export default useAddNewUserDetails;

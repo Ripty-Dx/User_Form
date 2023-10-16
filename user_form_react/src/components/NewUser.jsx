@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const NewUser = () => {
   const navigation = useNavigate();
   const handleBackToHome = () => {
-    window.location.href = "/";
+    window.location.href = "/dashboard";
   };
   const [newUserRegistrationDetails, setNewUserRegistrationDetails] = useState({
     name: "",
@@ -33,15 +33,17 @@ const NewUser = () => {
       newUserRegistrationDetails.hobbies.unshift(e.target.value);
     }
   };
+  
   const handleSuccess = () => {
     navigation("/success", {
       state: {
         message: "User Added successfully!",
-        data:newUserRegistrationDetails
+        data: newUserRegistrationDetails,
       },
     });
   };
-  console.log(newUserRegistrationDetails);
+
+  // console.log(newUserRegistrationDetails);
   return (
     <>
       <div className="bg-blue min-vh-100 min-vw-100 p-4 d-flex">
@@ -141,7 +143,7 @@ const NewUser = () => {
                 <option value="Creativity">Creativity</option>
               </select>
             </div>
-            <button className="btn bg-blue btn-primary w-100" onClick={handleSuccess} >
+            <button className="btn bg-blue btn-primary w-100" onClick={handleSuccess}>
               Submit
             </button>
           </form>

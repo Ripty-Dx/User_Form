@@ -3,7 +3,7 @@
     {
       "name": "Ripty Dx",
       "email": "test@b2b.com",
-      "mobile": "1",
+      "mobile": "12345678",
       "address": "Zirakpur, punjab",
       "gender": "Female",
       "hobbies": [
@@ -40,48 +40,18 @@
       "id": 4
     },
     {
-      "name": "John",
+      "name": "John smith",
       "email": "johnsmith@shopify.com",
-      "mobile": "54636",
+      "mobile": "9876547",
       "address": "Mohali, India",
       "gender": "Male",
       "hobbies": [
-        "Blogging",
-        "Yoga"
+        "Yoga",
+        "Photography",
+        "Blogging"
       ],
-      "preferences": "Creativity",
-      "id": 5
-    },
-    {
-      "name": "Om",
-      "email": "wq@gm.cm",
-      "mobile": "54",
-      "address": "Mohali, India",
-      "gender": "Others",
-      "hobbies": "Yoga",
       "preferences": "Problem Solving",
-      "id": 7
-    },
-    {
-      "name": "Ripty Singla",
-      "email": "singlaripty30@gmail.com",
-      "mobile": "7674",
-      "address": "Mohali, India",
-      "gender": "Others",
-      "preferences": "Critical Thinking",
-      "id": "8"
-    },
-    {
-      "name": "wdq",
-      "email": "test@b2b.com",
-      "mobile": "324",
-      "address": "",
-      "gender": "Male",
-      "id": 9
-    },
-    {
-      "{\n  \"name\": \"Ripty Dx\",\n  \"email\": \"test@b2b.com\",\n  \"mobile\": \"211\",\n  \"address\": \"\",\n  \"gender\": \"Others\"\n}": "",
-      "id": 10
+      "id": 5
     }
   ]
 }
