@@ -1,57 +1,14 @@
 {
   "users": [
     {
-      "name": "Ripty Dx",
-      "email": "test@b2b.com",
-      "mobile": "12345678",
-      "address": "Zirakpur, punjab",
-      "gender": "Female",
-      "hobbies": [
-        "Blogging",
-        "Yoga"
-      ],
-      "preferences": "Critical Thinking",
-      "id": 1
-    },
-    {
-      "name": "Kunal Gupta",
-      "email": "kunal@gmail.com",
-      "mobile": "69893",
-      "address": "Mohali, India",
-      "gender": "Male",
-      "hobbies": [
-        "Photography",
-        "Blogging"
-      ],
-      "preferences": "Problem Solving",
-      "id": 3
-    },
-    {
-      "name": "Ripty Singla",
+      "name": "wdq",
       "email": "te1st@b2b.com",
-      "mobile": "6787",
-      "address": "Mohali, India",
-      "gender": "Female",
-      "hobbies": [
-        "Yoga",
-        "Art"
-      ],
-      "preferences": "Critical Thinking",
-      "id": 4
-    },
-    {
-      "name": "John smith",
-      "email": "johnsmith@shopify.com",
-      "mobile": "9876547",
-      "address": "Mohali, India",
+      "mobile": "212",
+      "address": "Zirakpur, punjab",
       "gender": "Male",
-      "hobbies": [
-        "Yoga",
-        "Photography",
-        "Blogging"
-      ],
-      "preferences": "Problem Solving",
-      "id": 5
+      "hobbies": [],
+      "preferences": "",
+      "id": 1
     }
   ]
 }

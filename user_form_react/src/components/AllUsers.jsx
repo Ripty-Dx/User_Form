@@ -1,34 +1,39 @@
 import React from "react";
 import useAllUserList from "../api/useAllUserList";
 import { useNavigate } from "react-router-dom";
+import { useDelete } from "../api/useDelete";
 
 const AllUsers = () => {
   const userData = useAllUserList();
   const navigate = useNavigate();
+  const { mutateAsyncDelete } = useDelete();
   const handleAddNew = () => {
     navigate("/newUser");
   };
 
-  const onDelete = (id) => {
+  const onDelete = async (e, id) => {
+    e.preventDefault();
+    console.log(id);
+    const status = await mutateAsyncDelete(id);
+    console.log(status);
     navigate("/success", {
       state: {
         message: "User Deleted successfully!",
-        data: id,
+        status: status,
       },
     });
   };
   const onUpdate = (id) => {
-    navigate("/updateUser", {
-      state: {
-        id: id,
-      },
-    });
+    navigate("/updateUser");
+    sessionStorage.setItem("update user id", id);
   };
   return (
     <>
       <div className="bg-blue min-vh-100 min-vw-100 p-4 d-flex">
         <div className="w-100 shadow-sm bg-white border rounded-3 p-4">
-          <div className="d-flex justify-content-center px-1 align-items-center mb-1"><h3>Dashboard</h3></div>
+          <div className="d-flex justify-content-center px-1 align-items-center mb-1">
+            <h3>Dashboard</h3>
+          </div>
           <div className="d-flex justify-content-between px-1 align-items-center mb-4">
             <h3>
               <span className="underline">All</span> Users
@@ -76,7 +81,7 @@ const AllUsers = () => {
                       <button className="btn btn-success me-2" onClick={() => onUpdate(ele?.id)}>
                         Edit
                       </button>
-                      <button className="btn btn-danger" onClick={() => onDelete(ele?.id)}>
+                      <button className="btn btn-danger" onClick={(e) => onDelete(e, ele?.id)}>
                         Delete
                       </button>
                     </td>

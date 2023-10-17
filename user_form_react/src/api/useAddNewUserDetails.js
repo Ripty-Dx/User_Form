@@ -4,20 +4,22 @@ import { useEffect, useState } from "react";
 const useAddNewUserDetails = (props) => {
   // console.log(props);
   const [data, setData] = useState({});
-  useEffect(() => {
-    postDetails(props);
-  }, []);
-  const baseURL = "http://localhost:3001/users";
 
-  const postDetails = (props) => {
-    axios
-      .post(baseURL, props)
-      .then((response) => {
+  const baseURL = "http://localhost:3001/users";
+  return {
+    mutateAsyncAddNew: async (data) => {
+      try {
+        if (!data) {
+          return "";
+        }
+        const response = await axios.post(`${baseURL}`, data);
         setData(response.data);
-      })
-      .catch((err) => console.log(err));
+        return response.status;
+      } catch (error) {
+        console.log(error);
+      }
+    },
   };
-  return data;
 };
 
 export default useAddNewUserDetails;

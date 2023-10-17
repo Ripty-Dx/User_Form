@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { AiFillHome } from "react-icons/ai";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useSpecificUser from "../api/useSpecificUser";
 import { useEffect } from "react";
+import { useUpdate } from "../api/useUpdate";
 const UpdateUser = () => {
   const navigation = useNavigate();
-  const location = useLocation();
-  const userData = useSpecificUser(location.state.id);
+  const id = sessionStorage.getItem("update user id");
+  const userData = useSpecificUser(id);
   const [updateUserRegistrationDetails, setUpdateUserRegistrationDetails] = useState({});
+  const { mutateAsync } = useUpdate();
   const handleBackToHome = () => {
     window.location.href = "/dashboard";
   };
@@ -44,12 +46,14 @@ const UpdateUser = () => {
       [e.target.name]: updateUserRegistrationDetails.hobbies,
     }));
   };
-  const handleOnSubmit = () => {
+  const handleOnSubmit = async(e) => {
+    e.preventDefault();
+    const status = await mutateAsync(userData.id, updateUserRegistrationDetails);
+    console.log(status);
     navigation("/success", {
       state: {
         message: "User Details edited successfully!",
-        data: updateUserRegistrationDetails,
-        id: userData.id,
+        status: status,
       },
     });
   };

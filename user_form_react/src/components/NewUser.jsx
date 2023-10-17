@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { AiFillHome } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import useAddNewUserDetails from "../api/useAddNewUserDetails";
 const NewUser = () => {
   const navigation = useNavigate();
+  const { mutateAsyncAddNew } = useAddNewUserDetails();
   const handleBackToHome = () => {
     window.location.href = "/dashboard";
   };
@@ -33,12 +35,14 @@ const NewUser = () => {
       newUserRegistrationDetails.hobbies.unshift(e.target.value);
     }
   };
-  
-  const handleSuccess = () => {
+
+  const handleOnSubmit = async (e) => {
+    e.preventDefault();
+    const status = await mutateAsyncAddNew(newUserRegistrationDetails);
     navigation("/success", {
       state: {
         message: "User Added successfully!",
-        data: newUserRegistrationDetails,
+        status: status,
       },
     });
   };
@@ -143,7 +147,7 @@ const NewUser = () => {
                 <option value="Creativity">Creativity</option>
               </select>
             </div>
-            <button className="btn bg-blue btn-primary w-100" onClick={handleSuccess}>
+            <button className="btn bg-blue btn-primary w-100" onClick={handleOnSubmit}>
               Submit
             </button>
           </form>
