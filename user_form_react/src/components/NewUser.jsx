@@ -14,6 +14,8 @@ const NewUser = () => {
     mobile: "",
     address: "",
     gender: "",
+    password: "",
+    confirm_password: "",
     hobbies: [],
     preferences: "",
   });
@@ -24,30 +26,34 @@ const NewUser = () => {
     }));
   };
   const handleHobby = (e) => {
-    if (newUserRegistrationDetails.hobbies.length) {
-      if (newUserRegistrationDetails.hobbies.includes(e.target.value)) {
-        const filteredIndex = newUserRegistrationDetails.hobbies.indexOf(e.target.value);
-        newUserRegistrationDetails.hobbies.splice(filteredIndex, 1);
+    if (newUserRegistrationDetails?.hobbies?.length) {
+      if (newUserRegistrationDetails?.hobbies?.includes(e.target.value)) {
+        const filteredIndex = newUserRegistrationDetails?.hobbies?.indexOf(e.target.value);
+        newUserRegistrationDetails?.hobbies?.splice(filteredIndex, 1);
       } else {
-        newUserRegistrationDetails.hobbies.push(e.target.value);
+        newUserRegistrationDetails?.hobbies?.push(e.target.value);
       }
     } else {
-      newUserRegistrationDetails.hobbies.unshift(e.target.value);
+      newUserRegistrationDetails?.hobbies?.unshift(e.target.value);
     }
   };
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
-    const status = await mutateAsyncAddNew(newUserRegistrationDetails);
-    navigation("/success", {
-      state: {
-        message: "User Added successfully!",
-        status: status,
-      },
-    });
+    if (!newUserRegistrationDetails?.password?.localeCompare(newUserRegistrationDetails?.confirm_password)) {
+      const status = await mutateAsyncAddNew(newUserRegistrationDetails);
+      navigation("/success", {
+        state: {
+          message: "User Added successfully!",
+          status: status,
+        },
+      });
+    } else {
+      console.log("password is not matching");
+    }
   };
 
-  // console.log(newUserRegistrationDetails);
+  console.log(newUserRegistrationDetails);
   return (
     <>
       <div className="bg-blue min-vh-100 min-vw-100 p-4 d-flex">
@@ -64,8 +70,8 @@ const NewUser = () => {
           </div>
         </div>
         {/* <!-- right part --> */}
-        <div className="w-50 mx-auto my-auto shadow-sm bg-white border rounded-3 p-4">
-          <h3 className="mb-4">
+        <div className="w-50 mx-auto my-auto shadow-sm bg-white border rounded-3 px-4 py-3">
+          <h3 className="mb-2">
             <span className="underline">Re</span>gistration
           </h3>
           <form>
@@ -77,17 +83,25 @@ const NewUser = () => {
             <div className="mb-3 d-flex justify-content-center align-items-center w-100">
               <input type="email" className="form-control shadow-sm" name="email" placeholder="Enter your email" required onChange={handleValues} />
             </div>
+            {/* <!-- PASSWORD --> */}
+            <div className="mb-3 d-flex justify-content-center align-items-center w-100">
+              <input type="password" className="form-control shadow-sm" name="password" placeholder="Enter your password" required onChange={handleValues} />
+            </div>
+            {/* <!-- CONFIRM PASSWORD --> */}
+            <div className="mb-3 d-flex justify-content-center align-items-center w-100">
+              <input type="password" className="form-control shadow-sm" name="confirm_password" placeholder="Confirm password" required onChange={handleValues} />
+            </div>
             {/* <!-- MOBILE --> */}
             <div className="mb-3 d-flex justify-content-center align-items-center w-100">
               <input type="number" className="form-control shadow-sm" name="mobile" placeholder="Enter your mobile" required onChange={handleValues} />
             </div>
             {/* <!-- ADDRESS --> */}
-            <div className="mb-3 d-flex justify-content-center align-items-center w-100">
+            <div className="mb-2 d-flex justify-content-center align-items-center w-100">
               <input type="text" className="form-control shadow-sm" name="address" placeholder="Enter your address" onChange={handleValues} />
             </div>
             {/* <!-- GENDER --> */}
-            <div className="mb-3 d-flex  flex-wrap justify-content-start ps-1 align-items-center w-100">
-              <label className="form-label me-5"> Gender </label>
+            <div className="mb-2 d-flex  flex-wrap justify-content-start ps-1 align-items-center w-100">
+              <label className="form-label me-5" style={{width:"100px"}}> Gender </label>
               <div className="form-check">
                 <input type="radio" className="form-check-input" name="gender" required value="Male" id="Male" onChange={handleValues} />
                 <label className="form-check-label me-5" htmlFor="Male">
@@ -108,7 +122,7 @@ const NewUser = () => {
               </div>
             </div>
             {/* <!-- HOBBIES --> */}
-            <div className="mb-3 d-flex flex-wrap justify-content-start ps-1 align-items-center w-100">
+            <div className="mb-2 d-flex flex-wrap justify-content-start ps-1 align-items-center w-100">
               <label className="form-label me-5"> Hobbies </label>
               <div className="form-check">
                 <input type="checkbox" className="form-check-input" name="hobbies" value="Photography" id="Photography" onChange={handleHobby} />

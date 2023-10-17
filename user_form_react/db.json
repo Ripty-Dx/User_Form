@@ -1,14 +1,44 @@
 {
   "users": [
     {
-      "name": "wdq",
-      "email": "te1st@b2b.com",
-      "mobile": "212",
-      "address": "Zirakpur, punjab",
-      "gender": "Male",
-      "hobbies": [],
-      "preferences": "",
+      "name": "Ripty Dx",
+      "email": "test@b2b.com",
+      "mobile": "213120",
+      "address": "Zirakpur, punjab, India",
+      "gender": "Female",
+      "hobbies": [
+        "Photography",
+        "Blogging"
+      ],
+      "preferences": "Critical Thinking",
       "id": 1
+    },
+    {
+      "name": "Ripty Dx",
+      "email": "singlaripty30@gmail.com",
+      "mobile": "34534",
+      "address": "Zirakpur, punjab",
+      "gender": "Female",
+      "password": "123",
+      "confirm_password": "123",
+      "hobbies": [
+        "Photography",
+        "Blogging"
+      ],
+      "preferences": "Creativity",
+      "id": 2
+    },
+    {
+      "name": "Ripty Dx",
+      "email": "singlaripty30@gmail.com",
+      "mobile": "5744375467",
+      "address": "Mohali, India",
+      "gender": "Female",
+      "hobbies": [
+        "Blogging"
+      ],
+      "preferences": "Critical Thinking",
+      "id": 3
     }
   ]
 }
