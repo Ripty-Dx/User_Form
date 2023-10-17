@@ -5,10 +5,10 @@ const useLogin = (props) => {
   return {
     checkDetails: async (email, password) => {
       const response = await axios.get(`${baseURL}/?email=${email}&password=${password}`);
-      console.log(response.data[0].name);
+      console.log(response);
       return {
         authenticated:Boolean(response.data.length),
-        name:response.data[0].name
+        name:response?.data[0]?.name
       };
     },
   };
