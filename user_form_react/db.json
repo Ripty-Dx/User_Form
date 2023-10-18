@@ -14,22 +14,7 @@
       "id": 1
     },
     {
-      "name": "Ripty Dx",
-      "email": "singlaripty30@gmail.com",
-      "mobile": "34534",
-      "address": "Zirakpur, punjab",
-      "gender": "Female",
-      "password": "123",
-      "confirm_password": "123",
-      "hobbies": [
-        "Photography",
-        "Blogging"
-      ],
-      "preferences": "Creativity",
-      "id": 2
-    },
-    {
-      "name": "Ripty Dx",
+      "name": "Ripty Singla",
       "email": "singlaripty30@gmail.com",
       "mobile": "5744375467",
       "address": "Mohali, India",
@@ -39,6 +24,60 @@
       ],
       "preferences": "Critical Thinking",
       "id": 3
+    },
+    {
+      "name": "John smith",
+      "email": "johnsmith@shopify.com",
+      "mobile": "12234",
+      "address": "Zirakpur, punjab, India",
+      "gender": "Male",
+      "password": "1234",
+      "confirm_password": "1234",
+      "hobbies": [
+        "Photography"
+      ],
+      "preferences": "",
+      "id": 4
+    },
+    {
+      "name": "Ripty Dx",
+      "email": "te1st@b2b.com",
+      "mobile": 54,
+      "address": "",
+      "gender": "",
+      "password": "21",
+      "confirm_password": "12",
+      "hobbies": [],
+      "preferences": "",
+      "id": 5
+    },
+    {
+      "name": "Kunal Gupta",
+      "email": "test@b2b.com",
+      "mobile": 1234,
+      "address": "",
+      "gender": "Male",
+      "password": "12345678",
+      "confirm_password": "12345678",
+      "hobbies": [
+        "Photography"
+      ],
+      "preferences": "",
+      "id": 7
+    },
+    {
+      "name": "wdq",
+      "email": "wq@gm.cm",
+      "mobile": 1111111110,
+      "address": "",
+      "gender": "Others",
+      "password": "67891234",
+      "confirm_password": "67891234",
+      "hobbies": [
+        "Yoga"
+      ],
+      "preferences": "",
+      "id": 8
     }
   ]
 }

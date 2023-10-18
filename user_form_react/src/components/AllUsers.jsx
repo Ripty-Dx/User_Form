@@ -34,7 +34,7 @@ const AllUsers = () => {
           <div className="w-100 shadow-sm bg-white border rounded-3 p-4 min-vh-50">
             <div className="d-flex gap-3 justify-content-center px-1 align-items-center mb-1">
               <p className="align-middle m-0 fs-3">Welcome </p>
-              <h3 className="align-middle m-0 text-danger">{sessionStorage.getItem("user name")}</h3>
+              <h3 className="align-middle m-0 text-danger text-capitalize">{sessionStorage.getItem("user name")}</h3>
             </div>
             <div className="d-flex justify-content-between px-1 align-items-center mb-4">
               <h3>

@@ -5,10 +5,6 @@ import useLogin from "../api/useLogin";
 import { useFormik } from "formik";
 import { signInSchema } from "../schema";
 const Login = () => {
-  // const [loginDetails, setLoginDetails] = useState({
-  //   email: "",
-  //   password: "",
-  // });
   const initialLoginValues = {
     email: "",
     password: "",
@@ -16,8 +12,14 @@ const Login = () => {
   const { values, touched, errors, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: initialLoginValues,
     validationSchema: signInSchema,
-    onSubmit: (values, action) => {
-      console.log(values);
+    onSubmit: async (values, action) => {
+      const status = await checkDetails(values.email, values.password);
+      if (status.authenticated) {
+        navigation("/dashboard");
+        sessionStorage.setItem("user name", status.name);
+      } else {
+        navigation("/");
+      }
       action.resetForm();
     },
   });
@@ -28,17 +30,18 @@ const Login = () => {
     window.location.href = "/dashboard";
   };
 
-  const handleOnSubmit = async (e) => {
-    e.preventDefault();
-    const status = await checkDetails(initialLoginValues.email, initialLoginValues.password);
-    // console.log(status);
-    if (status.authenticated) {
-      navigation("/dashboard");
-      sessionStorage.setItem("user name", status.name);
-    } else {
-      navigation("/");
-    }
-  };
+  // const handleOnSubmit = async (e) => {
+  //   e.preventDefault();
+  //   console.log(initialLoginValues);
+  //   const status = await checkDetails(initialLoginValues.email, initialLoginValues.password);
+  //   // console.log(status);
+  //   if (status.authenticated) {
+  //     navigation("/dashboard");
+  //     sessionStorage.setItem("user name", status.name);
+  //   } else {
+  //     navigation("/");
+  //   }
+  // };
   // console.log(loginDetails);
   return (
     <>
@@ -74,7 +77,7 @@ const Login = () => {
               </div>
 
               {/* <button className="btn bg-blue btn-primary w-100 mb-3" onClick={handleOnSubmit}>    */}
-              <button className="btn bg-blue btn-primary w-100 mb-3" type="submit" onClick={handleOnSubmit}>
+              <button className="btn bg-blue btn-primary w-100 mb-3" type="submit">
                 Submit
               </button>
               <div className="mb-3 d-flex justify-content-center align-items-center w-100">
